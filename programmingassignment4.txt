@@ -1,0 +1,14 @@
+Type a word to test, or "quit" to stop: Racecar
+The string is a palindrome
+Type another word to test, or "quit" to stop: hello
+The string is not a palindrome
+Type another word to test, or "quit" to stop: Madam
+The string is a palindrome
+Type another word to test, or "quit" to stop: abba
+The string is a palindrome
+Type another word to test, or "quit" to stop: world
+The string is not a palindrome
+Type another word to test, or "quit" to stop: quit
+
+Number of input strings: 5
+Number of palindromes: 3
