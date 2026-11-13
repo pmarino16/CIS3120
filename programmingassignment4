@@ -1,0 +1,52 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+bool IsPalindrome(char testStr[]);
+void ToLower(char str[]);
+
+int main()
+{
+    char str[81];
+    int count = 0, palCount = 0;
+
+    cout << "Type a word to test, or \"quit\" to stop: ";
+    cin >> str;
+    ToLower(str);
+
+    while (strcmp(str, "quit") != 0)
+    {
+        count++;
+        if (IsPalindrome(str))
+        {
+            palCount++;
+            cout << "The string is a palindrome\n";
+        }
+        else
+            cout << "The string is not a palindrome\n";
+
+        cout << "Type another word to test, or \"quit\" to stop: ";
+        cin >> str;
+        ToLower(str);
+    }
+
+    cout << "\nNumber of input strings: " << count
+         << "\nNumber of palindromes: " << palCount << endl;
+    return 0;
+}
+
+bool IsPalindrome(char testStr[])
+{
+    int len = strlen(testStr);
+    for (int i = 0; i < len / 2; i++)
+        if (testStr[i] != testStr[len - 1 - i])
+            return false;
+    return true;
+}
+
+void ToLower(char str[])
+{
+    for (int i = 0; str[i] != '\0'; i++)
+        if (str[i] >= 'A' && str[i] <= 'Z')
+            str[i] += 'a' - 'A';
+}
